@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋  I'm Pawan Kumar</h1>
+<h1 align="center">Hi 👋  Rathish</h1>
 
 
 <h1 align="center">Personal Assistance for Seniors Who Are Self-Reliant</h1>
