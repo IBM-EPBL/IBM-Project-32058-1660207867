@@ -10,5 +10,4 @@
   <li> Rathish J </li>
   <li> Kaviyarasan L </li>
   <li> Manikandan S </li>
-  </ul>![image](https://user-images.githubusercontent.com/94606416/201474317-9f400f2c-74d8-4a8d-ac2d-fe089c2249a3.png)
-
+</u1>[image](https://user-images.githubusercontent.com/94606416/201474411-68f69324-4c3d-482f-8c17-87168be2cc77.png)
