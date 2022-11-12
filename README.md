@@ -10,5 +10,5 @@
   <li> Rathish J </li>
   <li> Kaviyarasan L </li>
   <li> Manikandan S </li>
-  </i>
-  </ul>
+  </ul>![image](https://user-images.githubusercontent.com/94606416/201474317-9f400f2c-74d8-4a8d-ac2d-fe089c2249a3.png)
+
