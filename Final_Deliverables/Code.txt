@@ -1,0 +1,95 @@
+#include<LiquidCrystal.h> 
+#include <Servo.h> 
+LiquidCrystal lcd(9, 8, 5, 4, 3, 2); 
+Servo servo_7; 
+Servo servo_6; Servo servo_1; const int buzzer 
+= 10; //buzzer to arduino pin 10 
+void setup() 
+{ lcd.begin(16,2); pinMode(buzzer, OUTPUT); // Set buzzer -
+pin 10 as an output pinMode(11, OUTPUT); pinMode(12, 
+OUTPUT); pinMode(13, OUTPUT); 
+ servo_7.attach(7); 
+servo_6.attach(6); servo_1.attach(1); 
+} void 
+loop() 
+{ 
+ servo_7.write(0); servo_6.write(0); 
+servo_1.write(0); lcd.setCursor(0,0); 
+lcd.print("Medicine"); 
+lcd.setCursor(2,1); 
+lcd.print("Reminder"); delay(200); 
+lcd.clear(); delay(400); // 
+lcd.print("NextCycle = 8AM"); 
+delay(500); // Wait for 500 millisecond(s) 
+lcd.clear(); 
+// FIRST CYCLE 
+digitalWrite(13, HIGH); //Green Light On 
+lcd.setCursor(0,0); lcd.print("8:00 AM"); 
+lcd.setCursor(2,1); 
+ lcd.print("MORNING MED"); 
+ servo_7.write(90); servo_6.write(0); 
+servo_1.write(0); tone(buzzer, 500); // Send 
+1KHz sound signal... 
+ delay(400); noTone(buzzer); 
+// Stop sound... 
+ delay(200); tone(buzzer, 500); // Send 
+1KHz sound signal... 
+ delay(300); noTone(buzzer); 
+// Stop sound... 
+ digitalWrite(13, LOW); //Green Light Off 
+ lcd.clear(); 
+servo_7.write(0); 
+servo_6.write(0); 
+servo_1.write(0); 
+lcd.print("NextCycle = 
+3PM"); delay(500); // Wait 
+for 500 millisecond(s) 
+lcd.clear(); 
+ 
+ // SECOND CYCLE 
+ digitalWrite(12, HIGH); //Blue Light On 
+lcd.setCursor(0,0); lcd.print("3:00 
+PM"); lcd.setCursor(2,1); 
+ lcd.print("AFTERNOON MED"); 
+ 
+ servo_7.write(0); //TEST 
+ servo_6.write(90); servo_1.write(0); 
+tone(buzzer, 500); // Send 1KHz sound signal... 
+ delay(300); noTone(buzzer); 
+// Stop sound... 
+ delay(200); tone(buzzer, 500); // Send 
+1KHz sound signal... 
+delay(400); 
+noTone(buzzer); // Stop sound... 
+digitalWrite(12, LOW); //Blue Light Off 
+ lcd.clear(); 
+servo_7.write(0); 
+servo_6.write(0); 
+servo_1.write(0); 
+ 
+ lcd.print("NextCycle = 10PM"); 
+delay(1000); lcd.clear(); 
+ 
+ // THIRD CYCLE digitalWrite(11, 
+HIGH); //Red Light On 
+
+ lcd.setCursor(0,0); 
+lcd.print("10:00 PM"); 
+lcd.setCursor(2,1); 
+lcd.print("NIGHT MED"); 
+servo_7.write(0); //TEST 
+servo_6.write(0); servo_1.write(90); 
+tone(buzzer, 500); // Send 1KHz sound signal... 
+ //delay(1000); // 
+noTone(buzzer); // Stop sound... 
+ delay(200); // tone(buzzer, 500); // Send 
+1KHz sound signal.. 
+ delay(300); noTone(buzzer); 
+// Stop sound... 
+ 
+ digitalWrite(11, LOW); //Red Light Off 
+lcd.clear(); servo_7.write(0); 
+servo_6.write(0); servo_1.write(0); 
+ delay(200); 
+ 
+}
